@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>chatbot1</title>
+	<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="libraries/p5.speech.js"></script>
+	<script src="sketch.js"></script>	
+	<link rel="stylesheet" href="style.css">
+			
+</head>
+
+	<body>
+
+		<div id="container">
+			<input  id="user_input" placeholder="Type your query"></input>
+		</div>
+
+		<div id="container">
+			<form id="button">
+					<input type="radio" name="button" value="start">Start speech <br>
+					<input type="radio" name="button" value="start" checked>No speech<br>
+			</form>
+		</div>
+		
+		<div id="container">
+			<h2 id="output">Your virtual English teacher!</h2>		
+		</div>
+
+		
+		<header style="float:right; margin-right:5%; margin-top:13em; vertical-align:30%; font-size:1.4em;">
+			<label id="lblTime" style=" font-weight:bold; display:flex;"></label>					
+			<label id="lblDate" style=" font-weight:bold; display:flex;"></label>					
+		</header>
+
+		<script>
+			$(document).ready(function() {
+				ShowTime();
+				});
+				function ShowTime() {
+				var dt = new Date();
+				document.getElementById("lblTime").innerHTML = dt.toLocaleTimeString();
+				window.setTimeout("ShowTime()", 1000); // Here 1000(milliseconds) means one 1 Sec  
+
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth()+1; //January is 0!
+				var yyyy = today.getFullYear();
+
+				if(dd<10) {
+					dd = '0'+dd
+				} 
+
+				if(mm<10) {
+					mm = '0'+mm
+				} 
+
+				today = mm + '/' + dd + '/' + yyyy;
+				document.getElementById("lblDate").innerHTML = today;
+
+				
+			}
+		</script>
+
+	</body>
+
+</html>
