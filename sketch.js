@@ -14,7 +14,7 @@ function voiceReady(){
 	speech.setVoice("Alice");
 	speech.setPitch(0.5);
 	speech.setRate(0.8);
-	speech.speak("I am your virtual English teacher.");	
+	//speech.speak("I am your virtual English teacher.");	
 }
 ///////////////////////////
 
