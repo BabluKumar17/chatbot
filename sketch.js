@@ -67,7 +67,6 @@ function keyPressed(){
 }
 
 function startSpeech(){
-	speech.interrupt = true;
 	speech.setPitch(0.5);
 	speech.setRate(0.8);
 	speech.speak(reply);
