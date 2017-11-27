@@ -67,7 +67,15 @@ function keyPressed(){
 }
 
 function startSpeech(){
-	speech.setPitch(0.5);
-	speech.setRate(0.8);
-	speech.speak(reply);
+	if(document.getElementById('start').checked) {
+		speech.setPitch(0.5);
+		speech.setRate(0.8);
+		speech.speak(reply);
+
+	  }else if(document.getElementById('end').checked){
+
+		speech.cancel();
+		speech.stop();
+	  }
+	
 }
